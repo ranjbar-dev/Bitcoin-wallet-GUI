@@ -1,0 +1,89 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer {
+    
+    * {
+        @apply outline-none;
+        box-sizing: border-box;
+        font-variant-numeric: lining-nums;
+    }
+      
+    body,
+    html,
+    #__nuxt {
+        letter-spacing: .5px;
+        font-family: 'Roboto';
+        font-size: large;
+        /* min-height: 100%; */
+        /* min-width: 100%; */
+        min-height: 100vh;
+        min-width: 100vw;
+        display: flex; 
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        overflow: hidden;
+    }
+
+    #__nuxt > div {
+        width: 100% ;
+        height: 100% ;
+    }
+
+    /* body */
+
+    .theme-dark{
+        @apply bg-dark-500 text-light-500 w-full h-full ; 
+    }
+
+    /* fade transition */
+
+    .fade-leave-active {
+        transition: all 0 ease-out;
+    }
+
+    .fade-leave-to {
+        opacity: 1;
+    }
+
+    .fade-enter-active {
+        transition: all 0.5s ease-out;
+    }
+
+    .fade-enter-from {
+        width: 0;
+        height: 0;
+        opacity: 0;
+    }
+}
+
+ /* loading  */
+
+ .loading-spinner {
+    @apply animate-spin text-gray-100 fill-gray-100 w-4 h-4 ; 
+}
+
+.loading-container{
+    @apply flex-1 flex justify-center items-center ; 
+}
+
+.loading-text{
+    @apply text-nowrap text-sm text-gray-100 mx-3 ;
+}
+
+ /* Scrollbar  */
+
+*::-webkit-scrollbar {
+    @apply bg-gray-800 w-1 h-1 ; 
+}
+*::-webkit-scrollbar-track {
+    @apply bg-gray-800 ; 
+}
+
+*::-webkit-scrollbar-thumb {
+    @apply bg-gray-700 rounded-lg ;
+}
